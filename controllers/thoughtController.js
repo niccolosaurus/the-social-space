@@ -23,7 +23,7 @@ module.exports = {
         !thought
           ? res
               .status(404)
-              .json({ message: 'No thought with that ID' })
+              .json({ message: 'Nothing with that ID' })
           : res.json({
               thought,
             }),
@@ -46,7 +46,7 @@ module.exports = {
         !thought
           ? res
               .status(404)
-              .json({ message: 'No thought with that ID' })
+              .json({ message: 'Nothing with that ID' })
           : Thought.findOneAndUpdate(
               { thoughts: req.params.thoughtId },
               { $pull: { thoughts: req.params.thoughtId } },
@@ -56,9 +56,9 @@ module.exports = {
       .then((reaction) =>
         !reaction
           ? res.status(404).json({
-              message: 'User deleted, but no reactions found',
+              message: 'User deleted',
             })
-          : res.json({ message: 'Thought successfully deleted' }),
+          : res.json({ message: 'Thought deleted' }),
       )
       .catch((err) => {
         console.log(err);
@@ -76,7 +76,7 @@ module.exports = {
         !thought
           ? res
               .status(404)
-              .json({ message: `No thought with that ID` })
+              .json({ message: `Nothing with that ID` })
           : res.json(thought),
       )
       .catch((err) => res.status(500).json(err));
@@ -93,7 +93,7 @@ module.exports = {
         !thought
           ? res
               .status(404)
-              .json({ message: 'No thought with that ID' })
+              .json({ message: 'Nothing with that ID' })
           : res.json(thought),
       )
       .catch((err) => res.status(500).json(err));
@@ -109,7 +109,7 @@ module.exports = {
         !thought
           ? res
               .status(404)
-              .json({ message: 'No thought with that ID' })
+              .json({ message: 'Nothing with that ID' })
           : res.json(thought),
       )
       .catch((err) => res.status(500).json(err));
