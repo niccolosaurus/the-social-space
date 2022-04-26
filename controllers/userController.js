@@ -16,9 +16,8 @@ module.exports = {
   },
 
   getSingleUser(req, res) {
-    User.findOne({ _id: req.params.userId })
+    User.findById({ _id: req.params.userId })
       .select('-__v')
-      .lean()
       .then(async (user) =>
         !user
           ? res.status(404).json({ message: 'Nothing with that ID' })
