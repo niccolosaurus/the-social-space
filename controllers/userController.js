@@ -1,5 +1,11 @@
 const { User, Thought } = require('../models');
 
+const userCount = async () => {
+  Student.aggregate()
+    .count('userCount')
+    .then((numberOfUsers) => numberOfUsers);
+}
+
 module.exports = {
   getUsers(req, res) {
     User.find()
