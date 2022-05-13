@@ -1,6 +1,7 @@
 const { Schema, model } = require('mongoose');
 const thoughtSchema = require('./Thought');
-const validator = require('validator');
+// const validator = require('validator');
+// Could not get the validators to work
 
 //User Model
 const userSchema = new Schema(
@@ -15,10 +16,10 @@ const userSchema = new Schema(
             type: String,
             required: true,
             unique: true,
-            validate: {
-                validator: () => Promise.resolve(false),
-                message: 'Email validation failed'
-            },
+            // validate: {
+            //     validator: () => Promise.resolve(false),
+            //     message: 'Email validation failed'
+            // },
         },
         thoughts: [
             {
