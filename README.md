@@ -41,5 +41,6 @@ n/a
 
 ### Questions
 [Github Profie](https://github.com/niccolosaurus)</br>
-nicco.eck@gmail.com
+nicco.eck@gmail.com </br>
+https://www.linkedin.com/in/niccolo-eck-195714223/ </br>
 
